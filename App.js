@@ -1,22 +1,33 @@
-import { View, Image, FlatList, StyleSheet } from 'react-native';
-import ItemCardapio from './ItemCardapio';
-import { cardapio } from './cardapio';
+import { View, Text, FlatList, StyleSheet, useWindowDimensions } from 'react-native';
+import ItemCatalogo from './ItemCatalogo';
+import { catalogo } from './catalogo';
 
 export default function App() {
+  const { width } = useWindowDimensions();
+  const numColumns = width > 768 ? 2 : 1;
+
   return (
     <View style={styles.container}>
-      <Image source={require('./assets/img/logo.png')} style={styles.logo} />
-
       <FlatList
+        key={numColumns}
+        numColumns={numColumns}
         style={styles.lista}
-        data={cardapio}
+        contentContainerStyle={styles.listaConteudo}
+        data={catalogo}
         keyExtractor={(item) => item.id}
+        ListHeaderComponent={
+          <View style={styles.header}>
+            <Text style={styles.titulo}>Modelos Esportivos de Alto Padrão</Text>
+            <Text style={styles.subtitulo}>Os carros mais renomados e desejados do mundo</Text>
+          </View>
+        }
         renderItem={({ item }) => (
-          <ItemCardapio
+          <ItemCatalogo
             foto={item.foto}
             nome={item.nome}
             descricao={item.descricao}
             preco={item.preco}
+            nivelPreco={item.nivelPreco}
           />
         )}
       />
@@ -25,7 +36,30 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#b8b7b4' },
-  logo: { width: 250, height:80, resizeMode: 'contain', alignSelf: 'center', marginTop: 20 },
+  container: { flex: 1, backgroundColor: '#f2f2f2', height: '100%' },
   lista: { flex: 1 },
+  listaConteudo: {
+    paddingBottom: 20,
+    maxWidth: 1200,
+    alignSelf: 'center',
+    width: '100%',
+  },
+  header: {
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+    alignItems: 'center',
+    width: '100%',
+  },
+  titulo: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#1a1a1a',
+    textAlign: 'center',
+    marginBottom: 5,
+  },
+  subtitulo: {
+    fontSize: 14,
+    color: '#666',
+    textAlign: 'center',
+  },
 });
