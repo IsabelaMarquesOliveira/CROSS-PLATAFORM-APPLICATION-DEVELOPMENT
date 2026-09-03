@@ -29,29 +29,31 @@ export default function ItemCatalogo({ foto, nome, descricao, preco, nivelPreco 
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: '#e0cfcf',
     borderRadius: 16,
     marginBottom: 20,
     marginHorizontal: 10,
     overflow: 'hidden',
     flex: 1,
   },
+
+  //Ajustando o espaçamento lateral entre os cards. Quando o aplicativo é aberto em telas grandes
   cardDesktop: {
-    marginHorizontal: 12,
+    marginHorizontal: 10,
   },
   containerImagem: {
     width: '100%',
-    height: 220,
+    height: 250,
   },
   containerImagemDesktop: {
-    height: 260,
+    height: 350,
   },
   foto: {
     width: '100%',
-    height: '100%',
+    height: '90%',
   },
   info: {
-    padding: 14,
+    padding: 10,
   },
   linhaCabecalho: {
     flexDirection: 'row',
@@ -62,16 +64,16 @@ const styles = StyleSheet.create({
   nome: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#1a1a1a',
+    color: '#000000',
   },
   nivelPreco: {
     fontSize: 14,
-    color: '#888',
+    color: '#83850c',
     fontWeight: '600',
   },
   descricao: {
     fontSize: 13,
-    color: '#666',
+    color: '#160f0f',
     marginBottom: 10,
   },
   linhaRodape: {

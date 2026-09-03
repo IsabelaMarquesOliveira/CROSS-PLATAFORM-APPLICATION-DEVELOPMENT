@@ -17,8 +17,8 @@ export default function App() {
         keyExtractor={(item) => item.id}
         ListHeaderComponent={
           <View style={styles.header}>
-            <Text style={styles.titulo}>Modelos Esportivos de Alto Padrão</Text>
-            <Text style={styles.subtitulo}>Os carros mais renomados e desejados do mundo</Text>
+            <Text style={styles.titulo}>Melhores Filmes de 2026</Text>
+            <Text style={styles.subtitulo}>Os grandes sucessos e lançamentos do cinema no ano</Text>
           </View>
         }
         renderItem={({ item }) => (
@@ -36,7 +36,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f2f2f2', height: '100%' },
+  container: { flex: 1, backgroundColor: '#fcf8f8', height: '100%' },
   lista: { flex: 1 },
   listaConteudo: {
     paddingBottom: 20,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#1a1a1a',
+    color: '#000000',
     textAlign: 'center',
     marginBottom: 5,
   },
